@@ -1,0 +1,24 @@
+%function out = batchreactor(t,x)
+function out = dWdt(t,w,C,T)
+global a1 a2 a3 a4 a5 a6 b1 b2 b3 b4 b5 b6 dt
+ t = ceil(t/dt)+1;
+ 
+ k1 = a1*exp(-b1/T(t)); k2 = a2*exp(-b2/T(t)); 
+ k3 = a3*exp(-b3/T(t)); k4 = a4*exp(-b4/T(t)); 
+ k5 = a5*exp(-b5/T(t)); k6 = a6*exp(-b6/T(t));
+w1 = w(1) ; w2 = w(2) ; w3 = w(3) ; w4 = w(4) ; w5 = w(5) ; w6 = w(6) ; 
+%w1 = 0 ; w2 = 0 ; w3 = 0 ; w4 = 0 ; w5 = 0 ; w6 = 0 ; 
+
+C1 = C(t,1);C2 = C(t,2);C3 = C(t,3);
+C4 = C(t,4);C5 = C(t,5);C6 = C(t,6);
+
+dw1bydt = -2*w1*(-k1*C5)-2*w2*(k1*C5)-2*w4*(k1*C5)-2*w5*(-k1*C5);
+dw2bydt = -2*w1*(k2*C4)-2*w2*(-k2*C4-k3*C5)-2*w3*(k3*C5)-2*w4*(-k2*C4+k3*C5);
+dw3bydt = -2*w2*(k4*C4)-2*w3*(-k4*C4-k5*C5)-2*w4*(-k4*C4+k5*C5)-2*w6*(k5*C5);
+dw4bydt = -2*w1*(k2*C2)-2*w2*(-k2*C2+k4*C1)-2*w3*(-k4*C1+k6*C6)-2*w4*(-k2*C2-k4*C1-k6*C6)-2*w5*(k2*C2+k4*C1+k6*C6)-2*w6*(-k6*C6);
+dw5bydt = -2*w1*(-k1*C3)-2*w2*(k1*C3-k3*C2)-2*w3*(k3*C2-k5*C1)-2*w4*(k1*C3+k3*C2+k5*C1)-2*w5*(-k1*C3-k3*C2-k5*C1)-2*w6*(k5*C1);
+dw6bydt = -2*w3*(k6*C4)-2*w4*(-k6*C4)-2*w5*(k6*C4)-2*w6*(-k6*C4);
+
+
+out = [dw1bydt; dw2bydt; dw3bydt; dw4bydt; dw5bydt; dw6bydt];
+%%end

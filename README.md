@@ -74,7 +74,3 @@ Given stochastic disturbances in feedstock composition, find the optimal tempera
 ## Background
 
 Transesterification converts triglycerides (vegetable oil/animal fat) + methanol into fatty acid methyl esters (FAME/biodiesel) + glycerol. The 6-component reaction system tracked in this project includes: Triglyceride (A), Diglyceride (B), Monoglyceride (C), Glycerol (D), Methanol (M), and Methyl Ester (E).
-
----
-
-*Submitted in partial fulfillment of the requirements for B.Tech in Electronics and Instrumentation Engineering, Manipal Institute of Technology, Manipal (2022–2023).*

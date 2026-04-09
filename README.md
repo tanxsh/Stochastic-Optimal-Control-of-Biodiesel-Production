@@ -3,7 +3,7 @@
 **Optimal Temperature Profile Formation for Biodiesel Production in a Batch Reactor Under Uncertainty**
 
 B.Tech Final Year Project — Electronics and Instrumentation Engineering  
-Manipal Institute of Technology | Sep 2023  
+Manipal Institute of Technology | Jan - Sep 2023  
 Guide: Dr. I. Thirunavukkarasu, Professor, Dept. of Instrumentation & Control Engineering
 
 ---
